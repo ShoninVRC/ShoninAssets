@@ -28,7 +28,6 @@ namespace ShoninAssets
 
             if (target != null)
             {
-                //元のInspector部分の下にボタンを表示
                 if (GUILayout.Button("Set Dynamic Bone root object"))
                 {
                     if (target == null)
