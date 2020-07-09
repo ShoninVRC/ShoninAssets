@@ -1,10 +1,6 @@
 # ShoninAssets
+日頃自分が欲しくて作っているこまごましたものをまとめています。  
+I'm putting together all the things I've always wanted and made.
 
-
-
-DBRootSet: 
-アバターのRootオブジェクトを入れてボタンを押すとアバターのDBのRootが全部自動で設定されます。
-
-
-
-"原則"補償、サポート等しません
+"原則"補償、サポート等致しません  
+In principle, we will not provide compensation or support.
