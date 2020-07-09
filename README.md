@@ -6,6 +6,6 @@ I'm putting together all the things I've always wanted and made.
 In principle, we will not provide compensation or support.
 
 # License
-このリポジトリはMITライセンスで提供致します。　　
+このリポジトリはMITライセンスで提供致します。  
 This repository is provided under the MIT license.　　
 LICENSE:https://github.com/ShoninVRC/ShoninAssets/blob/master/LICENSE
