@@ -10,7 +10,7 @@ public class BoneUniquer : EditorWindow
     bool isCompleted;
     GameObject targetArmature;
     Vector2 _scrollPosition = Vector2.zero;
-    [MenuItem("BoneUniquer/BoneUniquer")]
+    [MenuItem("ShoninAssets/BoneUniquer")]
     private static void Create()
     {
         // 生成

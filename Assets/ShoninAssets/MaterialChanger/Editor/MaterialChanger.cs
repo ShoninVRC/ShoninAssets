@@ -21,7 +21,7 @@ public class MaterialChanger : EditorWindow
 
     List<string> nameList = new List<string>();     // マテリアル名リストのフィールド
 
-    [MenuItem("MaterialChanger/MaterialChanger")]
+    [MenuItem("ShoninAssets/MaterialChanger")]
     private static void Create()
     {
         // 生成
