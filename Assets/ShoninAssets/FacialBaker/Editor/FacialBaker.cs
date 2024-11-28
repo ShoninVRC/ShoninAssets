@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -26,7 +26,7 @@ public class FacialBaker : EditorWindow
     [MenuItem("ShoninAssets/FacialBaker")]
     private static void Create()
     {
-        // ¶¬
+        // ç”Ÿæˆ
         FacialBaker window = GetWindow<FacialBaker>("FacialBaker");
         window.minSize = new Vector2(400, 150);
     }
@@ -35,7 +35,7 @@ public class FacialBaker : EditorWindow
     {
         ScrollPos = EditorGUILayout.BeginScrollView(ScrollPos);
 
-        // ƒIƒuƒWƒFƒNƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚½‚©A•ÏX‚³‚ê‚½‚É‰Šú‰»
+        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸã‹ã€å¤‰æ›´ã•ã‚ŒãŸæ™‚ã«åˆæœŸåŒ–
         GameObject t_targetAvatar = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Root", "Assign Root Object."), m_targetRenderersRoot, typeof(GameObject), true);
         if (t_targetAvatar != m_targetRenderersRoot)
         {
@@ -56,7 +56,7 @@ public class FacialBaker : EditorWindow
             }
         }
 
-        // ƒIƒuƒWƒFƒNƒg‚ªŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚ê‚ÎƒVƒFƒCƒvƒL[‚Ì‚ ‚éƒIƒuƒWƒFƒNƒg‚ğ—…—ñ
+        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå‰²ã‚Šå½“ã¦ã‚‰ã‚Œã¦ã„ã‚Œã°ã‚·ã‚§ã‚¤ãƒ—ã‚­ãƒ¼ã®ã‚ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç¾…åˆ—
         if (!m_isAvatarAssigned)
         {
             m_rendererListOpen = false;
@@ -66,7 +66,7 @@ public class FacialBaker : EditorWindow
         {
             EditorGUILayout.Space();
 
-            m_rendererListOpen = EditorGUILayout.Foldout(m_rendererListOpen, "SkinnedMeshRenderers"); // Ü‚è‚½‚½‚İ•\¦
+            m_rendererListOpen = EditorGUILayout.Foldout(m_rendererListOpen, "SkinnedMeshRenderers"); // æŠ˜ã‚ŠãŸãŸã¿è¡¨ç¤º
             if (m_rendererListOpen)
             {
                 for (int i = 0; i < m_renderers.Count; i++)
@@ -94,7 +94,7 @@ public class FacialBaker : EditorWindow
 
             EditorGUILayout.Space();
 
-            // ƒtƒHƒ‹ƒ_ƒpƒXAƒtƒ@ƒCƒ‹–¼“ü—Í
+            // ãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ã€ãƒ•ã‚¡ã‚¤ãƒ«åå…¥åŠ›
             m_animDirectoryPath = EditorGUILayout.TextField("Directory Path", m_animDirectoryPath);
             m_animFileName = EditorGUILayout.TextField("File Name", m_animFileName);
 
@@ -108,12 +108,12 @@ public class FacialBaker : EditorWindow
 
             EditorGUILayout.Space();
 
-            // ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹ì¬ˆ—
+            // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆå‡¦ç†
             if (GUILayout.Button("Bake"))
             {
                 string animPath = "";
                 AnimationClip animclip = new AnimationClip();
-                // ƒtƒ@ƒCƒ‹ƒpƒX‚Ìì¬
+                // ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ã®ä½œæˆ
                 string animDirectoryPath = "Assets/" + m_animDirectoryPath;
 
                 string animFileName = m_animFileName;
@@ -131,7 +131,7 @@ public class FacialBaker : EditorWindow
 
                 animPath = Path.Combine(animDirectoryPath, animFileName);
 
-                // QÆ‚·‚éƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ª‚ ‚ê‚Î“à—e‚ğƒRƒs[
+                // å‚ç…§ã™ã‚‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚Œã°å†…å®¹ã‚’ã‚³ãƒ”ãƒ¼
                 if (m_referenceAnimationClip != null)
                 {
                     var bindings = AnimationUtility.GetCurveBindings(m_referenceAnimationClip);
@@ -146,7 +146,7 @@ public class FacialBaker : EditorWindow
                 {
                     if (m_rendererToggles[i])
                     {
-                        // ƒIƒuƒWƒFƒNƒgƒpƒX‚Ìæ“¾
+                        // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ‘ã‚¹ã®å–å¾—
                         string objectPath = m_renderers[i].name;
                         Transform parentTransform = m_renderers[i].transform.parent;
 
@@ -156,7 +156,7 @@ public class FacialBaker : EditorWindow
                             parentTransform = parentTransform.parent;
                         }
 
-                        // ƒVƒFƒCƒvƒL[‚Ì’Ç‰Á
+                        // ã‚·ã‚§ã‚¤ãƒ—ã‚­ãƒ¼ã®è¿½åŠ 
                         for (int j = 0; j < m_renderers[i].sharedMesh.blendShapeCount; j++)
                         {
 
