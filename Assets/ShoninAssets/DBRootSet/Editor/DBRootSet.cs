@@ -39,6 +39,7 @@ namespace ShoninAssets
                     {
                         if (db.m_Root == null || db.m_Root != db.transform)
                         {
+                            Undo.RecordObject(db.m_Root, "DBRootSet"); // Undo操作対応
                             db.m_Root = db.transform;
                         }
                     }
