@@ -131,6 +131,17 @@ public class FacialBaker : EditorWindow
 
                 animPath = Path.Combine(animDirectoryPath, animFileName);
 
+                // 参照するアニメーションファイルがあれば内容をコピー
+                if (m_referenceAnimationClip != null)
+                {
+                    var bindings = AnimationUtility.GetCurveBindings(m_referenceAnimationClip);
+                    foreach (var binding in bindings)
+                    {
+                        var curve = AnimationUtility.GetEditorCurve(m_referenceAnimationClip, binding);
+                        AnimationUtility.SetEditorCurve(animclip, binding, curve);
+                    }
+                }
+
                 for (int i = 0; i < m_renderers.Count; i++)
                 {
                     if (m_rendererToggles[i])
@@ -143,17 +154,6 @@ public class FacialBaker : EditorWindow
                         {
                             objectPath = parentTransform.name + "/" + objectPath;
                             parentTransform = parentTransform.parent;
-                        }
-
-                        // アニメーションファイルがあれば内容をコピー
-                        if (m_referenceAnimationClip != null)
-                        {
-                            var bindings = AnimationUtility.GetCurveBindings(m_referenceAnimationClip);
-                            foreach (var binding in bindings)
-                            {
-                                var curve = AnimationUtility.GetEditorCurve(m_referenceAnimationClip, binding);
-                                AnimationUtility.SetEditorCurve(animclip, binding, curve);
-                            }
                         }
 
                         // シェイプキーの追加
