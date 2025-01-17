@@ -9,7 +9,7 @@ public class FacialBaker : EditorWindow
     [SerializeField]
     Vector2 ScrollPos = Vector2.zero;
     [SerializeField]
-    GameObject m_targetRenderersRoot;
+    Transform m_targetRenderersRoot;
     List<SkinnedMeshRenderer> m_renderers;
     bool m_isAvatarAssigned;
     bool[] m_rendererToggles;
@@ -36,7 +36,7 @@ public class FacialBaker : EditorWindow
         ScrollPos = EditorGUILayout.BeginScrollView(ScrollPos);
 
         // オブジェクトが割り当てられたか、変更された時に初期化
-        GameObject t_targetAvatar = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Root", "Assign Root Object."), m_targetRenderersRoot, typeof(GameObject), true);
+        Transform t_targetAvatar = (Transform)EditorGUILayout.ObjectField(new GUIContent("Root", "Assign Root Object."), m_targetRenderersRoot, typeof(Transform), true);
         if (t_targetAvatar != m_targetRenderersRoot)
         {
             m_targetRenderersRoot = t_targetAvatar;
@@ -150,7 +150,7 @@ public class FacialBaker : EditorWindow
                         string objectPath = m_renderers[i].name;
                         Transform parentTransform = m_renderers[i].transform.parent;
 
-                        while (parentTransform.parent != null)
+                        while (parentTransform != m_targetRenderersRoot)
                         {
                             objectPath = parentTransform.name + "/" + objectPath;
                             parentTransform = parentTransform.parent;
