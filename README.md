@@ -9,6 +9,6 @@ In principle, we will not provide compensation or support.
 See Wiki for overview and usage
 
 # License
-このリポジトリはMITライセンスで提供致します。  
+このリポジトリはMITライセンスで提供いたします。  
 This repository is provided under the MIT license.  
 LICENSE:https://github.com/ShoninVRC/ShoninAssets/blob/master/LICENSE
