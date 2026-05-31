@@ -52,7 +52,7 @@ public class AvatarVisualTransfer : EditorWindow
         GUILayout.Label("ブレンドシェイプ転送オプション");
         EditorGUI.indentLevel++;
         exactMatch = EditorGUILayout.ToggleLeft("オブジェクト名とブレンドシェイプが完全に一致している場合のみコピーする", exactMatch);
-        includeChildren = EditorGUILayout.ToggleLeft("深い階層の子オブジェクトを含める", includeChildren);
+        includeChildren = EditorGUILayout.ToggleLeft("子オブジェクトを含める", includeChildren);
         EditorGUI.indentLevel--;
 
         GUILayout.Space(10);
