@@ -129,19 +129,17 @@ public class AvatarVisualTransfer : EditorWindow
             GetChildrenRenderers<SkinnedMeshRenderer>(copyTransform, ref copyRenderers);
             GetChildrenRenderers<SkinnedMeshRenderer>(pasteTransform, ref pasteRenderers);
         }
-        else
-        {
-            SkinnedMeshRenderer renderer = copyTransform.GetComponent<SkinnedMeshRenderer>();
-            if (renderer != null)
-            {
-                copyRenderers.Add(renderer);
-            }
 
-            renderer = pasteTransform.GetComponent<SkinnedMeshRenderer>();
-            if (renderer != null)
-            {
-                pasteRenderers.Add(renderer);
-            }
+        SkinnedMeshRenderer renderer = copyTransform.GetComponent<SkinnedMeshRenderer>();
+        if (renderer != null)
+        {
+            copyRenderers.Add(renderer);
+        }
+
+        renderer = pasteTransform.GetComponent<SkinnedMeshRenderer>();
+        if (renderer != null)
+        {
+            pasteRenderers.Add(renderer);
         }
 
         if (exactMatch)
